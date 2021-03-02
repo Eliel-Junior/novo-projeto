@@ -6,7 +6,7 @@ After('@logout') do
 # find('a#navr--hamburgemenu').click
 # find('#hmenu-content li a.hmenu-item', text: 'Sair').click
 # driver.action.move_to(driver.find_element('a[href="/YourAccount"')).perform
-find('a[href="/YourAccount"').click
+find('div[class="account-dropdown-button"] span').click
 find('a[href="/SignOut?lnkctr=mL"]').click
 sleep 3
 end

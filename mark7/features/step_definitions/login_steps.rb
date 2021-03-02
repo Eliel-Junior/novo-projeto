@@ -1,7 +1,7 @@
 
 Dado('que eu acesso a página principal') do
-  #visit 'http://www.netflix.com/br/login'
-  visit 'http://177.153.230.45:90/P360AUTOMATO/'
+  visit 'http://www.netflix.com/br/login'
+  #visit 'http://177.153.230.45:90/P360AUTOMATO/'
 end
 
 Quando('eu faço login com {string} e {string}') do |email, senha|
