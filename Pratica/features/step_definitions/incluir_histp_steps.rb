@@ -1,6 +1,6 @@
 Dado('que eu acesse o sistema') do
   visit 'http://177.153.230.45:90/P360AUTOMATO/'
-  expect(page).to have_content('VERSÃO: 1.00.23 - PIRAMIDE 360 É UM PRODUTO DA')
+  expect(page).to have_content('2021 TODOS OS DIREITOS RESERVADOS.')
 end
 E('faça login com {string} e {string}') do |login, senha|
   find('#usuario').set login
@@ -9,6 +9,7 @@ E('faça login com {string} e {string}') do |login, senha|
   sleep 5
   find('img[src="assets/imagens/geral/foto_usuario.png"]').click
   sleep 3
+  find('div[class="editar-dados"] p span').click
   find('.lista-empresas', text: 'ICOM COMÉRCIO').click
   find('procenge-button[tipo="Sim"]').click
   sleep 5

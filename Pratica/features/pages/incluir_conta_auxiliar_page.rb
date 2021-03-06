@@ -2,8 +2,8 @@ class IncluirContaAuxiliar < SitePrism::Page
 
   element :moduloContabilidade, 'img[src="assets/imagens/modulos/contabilidade.svg"]'
   element :contaAuxiliar, 'a[href="/P360AUTOMATO/contabilidade/contaauxiliar"] span'
-  element :campoGrupo, 'procenge-dropdown p-dropdown[class="form-control ng-tns-c19-26 ng-untouched ng-pristine ng-valid"] span'
-  element :itemGrupo, 'p-dropdownitem li[aria-label="0001 - CLIENTES"] span'
+  element :campoGrupo, 'procenge-dropdown[identificador="grupoconta"] p-dropdown span'
+  element :itemGrupo, 'procenge-dropdown p-dropdown p-dropdownitem li[aria-label="2019 - AUTOMACAO"] span'
   element :campoCodigo, 'input#codigo'
   element :campoDescricao, 'input#descricao'
 

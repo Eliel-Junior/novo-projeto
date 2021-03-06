@@ -1,5 +1,4 @@
 class IncluirRequisicao < SitePrism::Page
-  #include Capybara::DSL
 
   element :telaRequisicao, 'a[href="/P360AUTOMATO/estoque/requisicao"] span'
 

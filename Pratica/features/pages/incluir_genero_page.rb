@@ -1,5 +1,4 @@
 class IncluirGenero < SitePrism::Page
-  #include Capybara::DSL
 
   element :acessarTelaGenero, 'a[href="/P360AUTOMATO/estoque/generoproduto"] span'
   element :campoCodigo, 'input#codgeneroGeneroproduto'

@@ -8,6 +8,6 @@ Funcionalidade: Incluir Conta Auxiliar
   Cenário: Incluir Conta Auxiliar com Sucesso
     Dado que eu acesse o sistema
 		E faça login com "AUTO03" e "piramide"
-		E acesse a página de contas auxiliares
+		E acesso a página de incluir contas auxiliares
     Quando eu incluir uma conta auxiliar com grupo, "1303" e "conta xablau"
 		Então devo ver a seguinte mensagem "Incluído com sucesso ."

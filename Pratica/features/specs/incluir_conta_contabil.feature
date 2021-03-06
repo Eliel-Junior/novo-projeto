@@ -8,6 +8,6 @@ Funcionalidade: Incluir Conta Contábil
   Cenário: Incluir Conta Contábil com Sucesso
     Dado que eu acesse o sistema
 		E faça login com "AUTO03" e "piramide"
-		E acesse a página de contas contábeis
+		E acesso a página de incluir contas contábeis
     Quando eu incluir uma conta contábil com versão, "1110299", "conta xablau" e "aaaaa"
 		Então devo ver a seguinte mensagem "Incluído com sucesso ."

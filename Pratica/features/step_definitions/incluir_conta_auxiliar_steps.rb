@@ -1,4 +1,4 @@
-E('acesse a página de contas auxiliares') do
+E('acesso a página de incluir contas auxiliares') do
   incluirContaAuxiliar = IncluirContaAuxiliar.new
   incluirContaAuxiliar.acessarTelaContaAuxiliar
   expect(page).to have_content('Incluir Conta Auxiliar')

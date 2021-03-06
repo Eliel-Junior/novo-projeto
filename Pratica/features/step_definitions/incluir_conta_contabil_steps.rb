@@ -1,4 +1,4 @@
-E('acesse a página de contas contábeis') do
+E('acesso a página de incluir contas contábeis') do
   incluirContaContabil = IncluirContaContabil.new
   incluirContaContabil.acessarTelaContaContabil
   expect(page).to have_content('Incluir Contas Contábeis')

@@ -3,7 +3,7 @@ E('acesse a página de incluir requisição') do
   incluirRequisicao.acessarTelaIncluirRequisicao
   expect(page).to have_content('Incluir Requisição')
 end
-Quando('eu incluir uma requisição com filial, almoxarifado, ndo, aplicação, requisição e {string}') do |quantidade|
+Quando('eu incluir uma requisição') do
   incluirRequisicao = IncluirRequisicao.new
-  incluirRequisicao.incluirRequisicao(quantidade)
+  incluirRequisicao.incluirRequisicao("0")
 end

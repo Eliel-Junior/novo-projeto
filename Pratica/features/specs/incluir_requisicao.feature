@@ -9,5 +9,5 @@ Funcionalidade: Incluir Requisição
     Dado que eu acesse o sistema
     E faça login com "AUTO03" e "piramide"
     E acesse a página de incluir requisição
-    Quando eu incluir uma requisição com filial, almoxarifado, ndo, aplicação, requisição e "1"
+    Quando eu incluir uma requisição
     Então devo ver a seguinte mensagem "Incluído com sucesso ."

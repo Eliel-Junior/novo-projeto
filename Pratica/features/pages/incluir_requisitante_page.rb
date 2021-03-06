@@ -1,5 +1,4 @@
 class IncluirRequisitante < SitePrism::Page
-  include Capybara::DSL
 
   element :telaRequisitante, 'a[href="/P360AUTOMATO/estoque/requisitante"] span'
   element :campoBuscaFilial, '#filial p-dropdown span'
@@ -12,11 +11,6 @@ class IncluirRequisitante < SitePrism::Page
   def acessarTelaIncluirRequisitante
     sleep 5
     find('.modulo', text: 'Estoque').click
-    #find('img[src="assets/imagens/modulos/estoque"]').click
-    #click_link 'Estoque'
-    #find('img[src="assets/imagens/modulos/contabilidade.svg"]').click
-    #finf('img[src="assets/imagens/modulos/estoque.png"]').click
-    #find('a[href="/P360AUTOMATO/estoque/home"] img').click
     sleep 5
     click_link 'Cadastros Básicos'
     telaRequisitante.click
