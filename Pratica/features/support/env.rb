@@ -1,6 +1,7 @@
 require 'capybara'
 require 'capybara/cucumber'
 require 'site_prism'
+require 'capybara/dsl'
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome

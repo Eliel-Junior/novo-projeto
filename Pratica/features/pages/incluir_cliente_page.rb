@@ -1,4 +1,6 @@
 class IncluirCliente < SitePrism::Page
+  include Capybara::DSL
+  include RSpec::Matchers
   
   element :telaCadastro, 'procenge-panelmenu#panelMenu procenge-panelmenusub ul a[id="01.01.01"] span[class="ui-menuitem-text"]'
   element :telaCliente, 'a[href="/P360AUTOMATO/financeiro/cliente"] span'
@@ -13,21 +15,23 @@ class IncluirCliente < SitePrism::Page
   element :itemArea, 'procenge-dropdown[identificador="area"] p-dropdown p-dropdownitem span'
   element :segmentoMercado, 'procenge-dropdownmultivalorado[nome="Segmento de Mercado"] p-multiselect'
   element :filtroSegmentoMercado, 'procenge-dropdownmultivalorado[nome="Segmento de Mercado"] p-multiselect input[placeholder="PESQUISAR"]' #farma
-  element :itemSegmentoMercado, 'procenge-dropdownmultivalorado[nome="Segmento de Mercado"] p-multiselect div[class="ui-chkbox ui-widget ng-tns-c34-82 ng-star-inserted"] span'
+  element :itemSegmentoMercado, 'procenge-dropdownmultivalorado[nome="Segmento de Mercado"] p-multiselect div[class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix ng-tns-c34-81 ng-star-inserted"] span[class="ui-chkbox-icon ui-clickable"]'
 
   #preenchimento de dados de endereço
   element :cep, 'procenge-inputcep[identificador="cep"] p-inputmask input'
-  element :endereco, 'procenge-inputtext[identificador="enderecofaturamento"] input'
   element :numero, 'procenge-inputtext[identificador="numeroEndereco"] input'
-  element :bairro, 'procenge-inputtext[identificador="bairro"] input'
+  element :complemento, 'procenge-inputtext[identificador="complemento"] input'
   element :telefone, 'procenge-inputtextmask[identificador="fone"] p-inputmask input'
-  element :cidade, 'procenge-inputtext[identificador="enderecofaturamento"] input'
-  element :filtroCidade, 'procenge-dropdown[identificador="cidade"] p-dropdown input[placeholder="PESQUISAR"]' #cacoal
-  element :itemCidade, 'procenge-dropdown[identificador="cidade"] p-dropdown p-dropdownitem span' 
-  element :estado, 'procenge-dropdown[identificador="estado"] p-dropdown'
-  element :filtroEstado, 'procenge-dropdown[identificador="estado"] p-dropdown input[placeholder="PESQUISAR"]'
-  element :itemEstado, 'procenge-dropdown[identificador="estado"] p-dropdown p-dropdownitem span'
-  element :radioSim, 'procenge-radiobutton[nome="Endereço de cobrança igual ao de faturamento"] p-radiobutton[class="ng-valid ng-dirty ng-touched"] span'
+  element :radioSim, '#usarComoCobranca procenge-radiobutton span[class="ui-radiobutton-icon ui-clickable"]'
+  
+  #element :endereco, 'procenge-inputtext[identificador="enderecofaturamento"] input[id="enderecofaturamento"]'
+  # element :bairro, 'procenge-inputtext[identificador="bairro"] input'
+  # element :cidade, 'procenge-inputtext[identificador="enderecofaturamento"] input'
+  # element :filtroCidade, 'procenge-dropdown[identificador="cidade"] p-dropdown input[placeholder="PESQUISAR"]' #cacoal
+  # element :itemCidade, 'procenge-dropdown[identificador="cidade"] p-dropdown p-dropdownitem span' 
+  # element :estado, 'procenge-dropdown[identificador="estado"] p-dropdown'
+  # element :filtroEstado, 'procenge-dropdown[identificador="estado"] p-dropdown input[placeholder="PESQUISAR"]'
+  # element :itemEstado, 'procenge-dropdown[identificador="estado"] p-dropdown p-dropdownitem span'
   
   #informações da empresa
   element :empresa, 'procenge-dropdown[identificador="empresa"] p-dropdown span'
@@ -49,8 +53,8 @@ class IncluirCliente < SitePrism::Page
     sleep 3
   end
 
-  def incluirCliente(cod, pcpf, pemail, pnome, pfiltroArea, pcep, pendereco, pnumero, pbairro, ptelefone, pfiltroCidade, pfiltroEmpresa, pfiltroDocumento)
-    #prenchimento de dados gerais
+  def incluirCliente(cod, pcpf, pemail, pnome, pfiltroArea, pfiltroSegmentoMercado, pcep, pnumero, pcomplemento, ptelefone, pfiltroEmpresa, pfiltroDocumento)
+    #prenchimento de dados gerais pfiltroSegmentoMercado pfiltroCidade, pendereco, pbairro,
     codigo.set cod
     cpf.set pcpf
     email.set pemail
@@ -58,23 +62,35 @@ class IncluirCliente < SitePrism::Page
     area.click
     filtro.set pfiltroArea
     itemArea.click
-    # segmentoMercado.click
-    # filtroSegmentoMercado.set pfiltroSegmentoMercado
-    # itemSegmentoMercado.click
+    segmentoMercado.click
+    filtroSegmentoMercado.set pfiltroSegmentoMercado
+    #first("#segmentomercado p-multiselect span.ui-chkbox-icon").click
+    #find("#segmentomercado p-multiselect span.ui-chkbox-icon").click{8}
+    #find("#segmentomercado p-multiselect span.ui-chkbox-icon", text: "FARMACEUTICA").click
+    #find("#segmentomercado p-multiselect span.ui-chkbox-icon")[8].click
+    page.all('#segmentomercado p-multiselect span.ui-chkbox-icon').click
+    #all("#segmentomercado p-multiselect span.ui-chkbox-icon")[8].click
+    # page.within(element = div)do
+    # end
+    sleep 3
 
     #preenchimeto de dados de endereço
     find('p', text: 'Endereço').click
     cep.set pcep
-    endereco.set pendereco
     numero.set pnumero
-    bairro.set pbairro
+    first("input#complemento").set pcomplemento
     telefone.set ptelefone
     radioSim.click
-    cidade.click
-    filtroCidade.set pfiltroCidade
-    itemCidade.click
+    
+    #endereco.set pendereco
+    #bairro.set pbairro
+    # cidade.click
+    #complemento.set pcomplemento
+    # filtroCidade.set pfiltroCidade
+    # itemCidade.click
 
     #informações da empresa
+    find('p', text: 'Informações por Empresa').click
     click_button 'Empresa'
     empresa.click
     filtroEmpresa.set pfiltroEmpresa
@@ -82,7 +98,6 @@ class IncluirCliente < SitePrism::Page
     documentoPagamento.click
     filtroDucumento.set pfiltroDocumento
     itemDocumento.click
-    find('p', text: 'Conta Contábil').click
     click_button 'Adicionar'
     sleep 5
     click_button('Salvar')
