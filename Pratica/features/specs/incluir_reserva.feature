@@ -6,8 +6,7 @@ Funcionalidade: Incluir Reserva
   Para incluir uma nova reserva
   
   Cenário: Incluir Reserva com Sucesso
-    Dado que eu acesse o sistema
-		E faça login com "AUTO03" e "piramide"
+    Dado que eu faça o login no pirâmide 360
 		E acesso a página de incluir reserva
     Quando eu incluir uma reserva
 		Então devo ver a seguinte mensagem "Incluído com sucesso ."

@@ -1,4 +1,4 @@
-#language:pt
+#language: pt
 @incluir_cliente
 Funcionalidade: Incluir Cliente
   Como um usuário logado no sistema
@@ -6,8 +6,7 @@ Funcionalidade: Incluir Cliente
 	Para incluir um novo cliente
   
 	Cenário: Incluir cliente com sucesso
-		Dado que eu acesse o sistema
-		E faça login com "AUTO03" e "piramide"
+		Dado que eu faça o login no pirâmide 360
 		E acesse a página de incluir cliente
 		Quando eu incluir um cliente
 		Então devo ver a seguinte mensagem "Incluído com sucesso ."

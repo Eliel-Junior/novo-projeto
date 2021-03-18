@@ -6,8 +6,7 @@ Funcionalidade: Incluir Conta Contábil
   Para incluir uma nova conta contábil
   
   Cenário: Incluir Conta Contábil com Sucesso
-    Dado que eu acesse o sistema
-		E faça login com "AUTO03" e "piramide"
+    Dado que eu faça o login no pirâmide 360
 		E acesso a página de incluir contas contábeis
     Quando eu incluir uma conta contábil com versão, "1110299", "conta xablau" e "aaaaa"
 		Então devo ver a seguinte mensagem "Incluído com sucesso ."

@@ -6,8 +6,7 @@ Funcionalidade: Incluir Requisição
   Para incluir uma nova requisição
 
   Cenário: Incluir Requisição com Sucesso
-    Dado que eu acesse o sistema
-    E faça login com "AUTO03" e "piramide"
+    Dado que eu faça o login no pirâmide 360
     E acesse a página de incluir requisição
     Quando eu incluir uma requisição
     Então devo ver a seguinte mensagem "Incluído com sucesso ."

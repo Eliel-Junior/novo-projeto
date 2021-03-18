@@ -13,6 +13,7 @@ class IncluirHistoricoPadrao < SitePrism::Page
     sleep 3
     click_button 'Incluir'
   end
+
   def incluirHistP(codigo, historico)
     campoCodigo.set codigo
     campoHistorico.set historico
@@ -20,4 +21,5 @@ class IncluirHistoricoPadrao < SitePrism::Page
     click_button('Salvar')
     sleep 2
   end
+  
 end

@@ -6,8 +6,7 @@ Funcionalidade: Incluir Requisitante
   Para incluir um novo requisitante
 
   Cenário: Incluir Requisitante com Sucesso
-    Dado que eu acesse o sistema
-    E faça login com "AUTO03" e "piramide"
+    Dado que eu faça o login no pirâmide 360
     E acesse a página de incluir requisitante
     Quando eu incluir um histórico com filial, "1303" e "xablau"
     Então devo ver a seguinte mensagem "Incluído com sucesso ."

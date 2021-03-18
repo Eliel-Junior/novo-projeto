@@ -43,4 +43,5 @@ class IncluirReserva < SitePrism::Page
     click_button('Salvar')
     sleep 2
   end
+  
 end

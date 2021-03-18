@@ -3,6 +3,8 @@ require 'capybara/cucumber'
 require 'site_prism'
 require 'capybara/dsl'
 
+#World(Pages)
+
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome
   config.run_server = false
