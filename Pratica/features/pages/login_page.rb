@@ -1,10 +1,9 @@
 class Login < SitePrism::Page
-  include Capybara::DSL
+  include Pages
 
   element :usuario, '#usuario'
   element :senha, '#senha'
   element :btnEntrar, 'button[class="btn btn-primary btn-lg"]'
-
   element :imagenUsuario, 'img[src="assets/imagens/geral/foto_usuario.png"]'
   element :listaEmpresas, 'div[class="editar-dados"] p span'
   element :btnSim, 'procenge-button[tipo="Sim"]'
@@ -13,9 +12,9 @@ class Login < SitePrism::Page
     visit 'http://177.153.230.45:90/P360AUTOMATO/'
   end
 
-  def logar(login, psenha)
-    usuario.set login
-    senha.set psenha
+  def realizarLogin(user, psenha)
+    usuario.set(user)
+    senha.set(psenha)
     btnEntrar.click
   end
 
@@ -27,5 +26,4 @@ class Login < SitePrism::Page
     btnSim.click
     sleep 3
   end
-
 end

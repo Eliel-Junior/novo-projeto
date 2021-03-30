@@ -1,10 +1,8 @@
-E('acesso a página de incluir reserva') do
-  incluirReserva = IncluirReserva.new
-  incluirReserva.acessarTelaIncluirReserva
+E('acesso a página de reserva') do
+  incluirreserva.acessarTelaIncluirReserva
   expect(page).to have_content('Incluir Reserva de Produtos')
 end
 
 Quando('eu incluir uma reserva') do
-  incluirReserva = IncluirReserva.new
-  incluirReserva.incluirReserva("1")
+  incluirreserva.incluirReserva("100", "aut - teste", "4 - GDEGF", "faltas", "aaa")
 end

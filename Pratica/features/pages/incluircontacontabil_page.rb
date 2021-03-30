@@ -1,5 +1,4 @@
 class IncluirContaContabil < SitePrism::Page
-
   element :moduloContabilidade, 'img[src="assets/imagens/modulos/contabilidade.svg"]'
   element :contacontabil, 'a[href="/P360AUTOMATO/contabilidade/contacontabil"] span'
   element :campoConta, 'input#CONTA'
@@ -13,11 +12,11 @@ class IncluirContaContabil < SitePrism::Page
     click_link 'Plano de Contas'
     contacontabil.click
     sleep 5
-    click_button 'Incluir'
-    sleep 5
   end
 
   def incluirContaContabil(conta, descricao, reduzido)
+    click_button 'Incluir'
+    sleep 5
     campoConta.set conta
     campoDescricao.set descricao
     campoReduzido.set reduzido

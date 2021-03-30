@@ -1,19 +1,17 @@
 Dado('que eu acesse o pirâmide 360') do
-  login = Login.new
   login.acessarLogin
   expect(page).to have_content('PROCENGE TECNOLOGIA ©')
   page.assert_selector('procenge-footer footer[class="rodape"] a[href="https://www.procenge.com.br"]')
 end
 
-Quando('logar com {string} e {string}') do |login, senha|
-  logar = Login.new
-  logar.logar(login, senha)
+Quando('logar com {string} e {string}') do |user, senha|
+  #Entra no step mas para no método
+  login.realizarLogin(user, senha)
   sleep 3
 end
 
 Então('devo selecionar a empresa de teste') do
-  selecionarEmpresa = Login.new
-  selecionarEmpresa.selecionarEmpresa
+  login.selecionarEmpresa
 end
 
 Então('devo ser autenticado com sucesso') do

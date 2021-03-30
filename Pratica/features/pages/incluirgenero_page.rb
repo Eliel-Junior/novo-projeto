@@ -1,5 +1,4 @@
 class IncluirGenero < SitePrism::Page
-
   element :acessarTelaGenero, 'a[href="/P360AUTOMATO/estoque/generoproduto"] span'
   element :campoCodigo, 'input#codgeneroGeneroproduto'
   element :campoDescricao, 'input#dscgeneroGeneroproduto'
@@ -14,10 +13,10 @@ class IncluirGenero < SitePrism::Page
     click_link 'Cadastros Básicos'
     acessarTelaGenero.click
     sleep 3
-    click_button 'Incluir'
   end
 
   def incluirGenero(codigo, descricao)
+    click_button 'Incluir'
     campoCodigo.set codigo
     campoDescricao.set descricao
     combustivelNao.click
@@ -27,5 +26,4 @@ class IncluirGenero < SitePrism::Page
     click_button('Salvar')
     sleep 2
   end
-  
 end

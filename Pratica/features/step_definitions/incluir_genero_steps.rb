@@ -1,10 +1,8 @@
-E('acesse a página de incluir gênero') do
-  incluirGenero = IncluirGenero.new
-  incluirGenero.acessarTelaIncluirGenero
+E('acesse a página de gênero') do
+  incluirgenero.acessarTelaIncluirGenero
   expect(page).to have_content('Incluir Gênero Produto')
 end
 
 Quando('eu incluir um gênero com {string} e {string}') do |codigo, descricao|
-  incluirGenero = IncluirGenero.new
-  incluirGenero.incluirGenero(codigo, descricao)
+  incluirgenero.incluirGenero(codigo, descricao)
 end

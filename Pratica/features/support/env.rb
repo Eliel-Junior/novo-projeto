@@ -2,8 +2,9 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'site_prism'
 require 'capybara/dsl'
+require_relative 'page_helper.rb'
 
-#World(Pages)
+World(Pages)
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome

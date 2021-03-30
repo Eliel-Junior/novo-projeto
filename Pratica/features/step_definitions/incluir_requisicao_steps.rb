@@ -1,10 +1,8 @@
-E('acesse a página de incluir requisição') do
-  incluirRequisicao = IncluirRequisicao.new
-  incluirRequisicao.acessarTelaIncluirRequisicao
+E('acesse a página de requisição') do
+  incluirrequisicao.acessarTelaIncluirRequisicao
   expect(page).to have_content('Incluir Requisição')
 end
 
 Quando('eu incluir uma requisição') do
-  incluirRequisicao = IncluirRequisicao.new
-  incluirRequisicao.incluirRequisicao("0")
+  incluirrequisicao.incluirRequisicao("100", "faltas", "aut - teste", "4 - GDEGF", "aaa")
 end

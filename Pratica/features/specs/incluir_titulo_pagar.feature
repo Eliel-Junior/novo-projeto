@@ -5,8 +5,10 @@ Funcionalidade: Incluir Título a Pagar
   Posso acessar a página de incluir títulos a pagar
   Para incluir um novo título
 
-  Cenário: Incluir Título a Pagar com Sucesso
+  Contexto: Login e acesso a página
     Dado que eu faça o login no pirâmide 360
-    E acesse a página de incluir título a pagar
-    Quando eu incluir um novo título
-    Então devo ver a seguinte mensagem "Incluído com sucesso ."
+    E acesse a página de título a pagar
+
+    Cenário: Incluir Título a Pagar com Sucesso
+      Quando eu incluir um novo título
+      Então devo ver a seguinte mensagem "Incluído com sucesso ."

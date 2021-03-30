@@ -1,6 +1,5 @@
 class IncluirTipoLancamento < SitePrism::Page
   include Capybara::DSL
-
   element :moduloContabilidade, 'img[src="assets/imagens/modulos/contabilidade.svg"]'
   element :tipoLacamento, 'a[href="/P360AUTOMATO/contabilidade/lancamentotipo"] span'
   element :campoCodigo, 'input#codigoLancamento'
@@ -12,15 +11,14 @@ class IncluirTipoLancamento < SitePrism::Page
     click_link 'Cadastros'
     tipoLacamento.click
     sleep 3
-    click_button 'Incluir'
   end
 
   def incluirTipoLancamento(codigo, descricao)
+    click_button 'Incluir'
     campoCodigo.set codigo
     campoDescricao.set descricao
     sleep 5
     click_button('Salvar')
     sleep 2
-  end
-  
+  end  
 end

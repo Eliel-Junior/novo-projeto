@@ -7,13 +7,11 @@ Dado('que eu faça o login no pirâmide 360') do
   }
 end
 
-E('acesse a página de incluir aplicação') do
-  incluirAplicacao = IncluirAplicacao.new
-  incluirAplicacao.acessarTelaIncluirAplicacao
+E('acesse a página de aplicação') do
+  incluiraplicacao.acessarTelaIncluirAplicacao
   expect(page).to have_content('Incluir Aplicação')
 end
 
 Quando('eu incluir uma aplicação com {string} e {string}') do |codigo, descricao|
-  incluirAplicacao = IncluirAplicacao.new
-  incluirAplicacao.incluirAplicacao(codigo, descricao)
+  incluiraplicacao.incluirAplicacao(codigo, descricao, "teste automacao", "rafa")
 end

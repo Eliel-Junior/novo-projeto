@@ -5,8 +5,10 @@ Funcionalidade: Incluir Requisição
   Posso acessar a página de incluir requisição
   Para incluir uma nova requisição
 
-  Cenário: Incluir Requisição com Sucesso
+  Contexto: Login e acesso a página
     Dado que eu faça o login no pirâmide 360
-    E acesse a página de incluir requisição
-    Quando eu incluir uma requisição
-    Então devo ver a seguinte mensagem "Incluído com sucesso ."
+    E acesse a página de requisição
+
+    Cenário: Incluir Requisição com Sucesso
+      Quando eu incluir uma requisição
+      Então devo ver a seguinte mensagem "Incluído com sucesso ."
