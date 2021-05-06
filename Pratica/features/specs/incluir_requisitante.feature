@@ -2,7 +2,7 @@
 @incluir_requisitante
 Funcionalidade: Incluir Requisitante
   Como um usuário logado no sistema
-  Posso acessar a página de incluir requisitante
+  Posso acessar a página requisitante
   Para incluir um novo requisitante
 
   Contexto: Login e acesso a página

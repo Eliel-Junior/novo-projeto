@@ -10,5 +10,5 @@ Funcionalidade: Incluir Tipo de Lançamento
 		E acesse a página de tipo de lançamento
   
     Cenário: Incluir Tipo de Lançamento com Sucesso
-      Quando eu incluir um tipo de lançamento com "15" e "XXX"
+      Quando eu incluir um tipo de lançamento com "1303" e "xablau"
       Então devo ver a seguinte mensagem "Incluído com sucesso ."

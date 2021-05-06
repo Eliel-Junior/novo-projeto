@@ -37,4 +37,13 @@ class Gerais < SitePrism::Page
     itemDropdown = ("procenge-dropdownmultivalorado[nome='#{nome}'] p-multiselect li[style='display: block;'] span.ng-star-inserted")
     find(itemDropdown).click
   end
+
+  def preencherDropdownrange(identificador, filtro)
+    dropdown = ("procenge-dropdownrange[identificador='#{identificador}'] p-dropdown label")
+    find(dropdown).click
+    filtroDropdown = ("procenge-dropdownrange[identificador='#{identificador}'] p-dropdown input[placeholder='PESQUISAR']")
+    find(filtroDropdown).set filtro
+    itemDropdown = ("procenge-dropdownrange[identificador='#{identificador}'] p-dropdown p-dropdownitem span")
+    find(itemDropdown).click
+  end
 end

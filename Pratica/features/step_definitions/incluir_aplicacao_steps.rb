@@ -9,7 +9,7 @@ end
 
 E('acesse a página de aplicação') do
   incluiraplicacao.acessarTelaIncluirAplicacao
-  expect(page).to have_content('Incluir Aplicação')
+  expect(page).to have_content('Aplicação')
 end
 
 Quando('eu incluir uma aplicação com {string} e {string}') do |codigo, descricao|

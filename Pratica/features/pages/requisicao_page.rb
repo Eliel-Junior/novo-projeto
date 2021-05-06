@@ -1,4 +1,4 @@
-class IncluirRequisicao < SitePrism::Page
+class Requisicao < SitePrism::Page
   include Pages
   element :telaRequisicao, 'a[href="/P360AUTOMATO/estoque/requisicao"] span'
   element :quantidadeRequisitada, 'input#qtdRequisitada'
@@ -25,6 +25,14 @@ class IncluirRequisicao < SitePrism::Page
     sleep 5
     click_button('Salvar')
     sleep 2
+  end
+
+  def excluirrequisicao
+    find('procenge-inputtextrange[identificador="codigohistorico"] input').set "1303"
+    click_button 'Pesquisar'
+    first('p-dtcheckbox span').click
+    click_button 'Excluir'
+    click_button 'Sim'
   end
 end
 # element :aumoxarifado, '#almoxarifado span[class="ui-dropdown-trigger-icon ui-clickable fa fa-fw fa-angle-down"]'

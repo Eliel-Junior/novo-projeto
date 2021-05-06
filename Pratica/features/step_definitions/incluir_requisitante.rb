@@ -1,6 +1,6 @@
 E('acesse a página de requisitante') do
   incluirrequisitante.acessarTelaIncluirRequisitante
-  expect(page).to have_content('Incluir Requisitante')
+  expect(page).to have_content('Requisitante')
 end
 
 Quando('eu incluir um histórico com filial, {string} e {string}') do |codigo, nome|

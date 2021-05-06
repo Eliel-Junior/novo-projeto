@@ -1,6 +1,6 @@
 E('acesso a página de reserva') do
   incluirreserva.acessarTelaIncluirReserva
-  expect(page).to have_content('Incluir Reserva de Produtos')
+  expect(page).to have_content('Reserva de Produtos')
 end
 
 Quando('eu incluir uma reserva') do

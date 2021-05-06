@@ -5,7 +5,7 @@ Funcionalidade: Incluir Aplicação
 	Posso acessar a página de incluir aplicação
 	Para incluir uma nova aplicação
 
-	Contexto: Contexto: Login e acesso a página
+	Contexto: Login e acesso a página
 		Dado que eu faça o login no pirâmide 360
 		E acesse a página de aplicação
   

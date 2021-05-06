@@ -1,4 +1,4 @@
-class IncluirHistoricoPadrao < SitePrism::Page
+class HistoricoPadrao < SitePrism::Page
   element :moduloContabilidade, 'img[src="assets/imagens/modulos/contabilidade.svg"]'
   element :historicoPadrao, 'a[href="/P360AUTOMATO/contabilidade/historicopadrao"] span' 
   element :campoCodigo, 'procenge-inputtext[identificador="codigo"] input'
@@ -20,4 +20,12 @@ class IncluirHistoricoPadrao < SitePrism::Page
     click_button('Salvar')
     sleep 2
   end 
+
+  def excluirhistp
+    find('procenge-inputtextrange[identificador="codigohistorico"] input').set "1303"
+    click_button 'Pesquisar'
+    first('p-dtcheckbox span').click
+    click_button 'Excluir'
+    click_button 'Sim'
+  end
 end

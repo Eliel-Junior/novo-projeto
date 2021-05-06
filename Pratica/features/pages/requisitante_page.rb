@@ -1,4 +1,4 @@
-class IncluirRequisitante < SitePrism::Page
+class Requisitante < SitePrism::Page
   include Pages
   element :telaRequisitante, 'a[href="/P360AUTOMATO/estoque/requisitante"] span'
   element :campoCodigo, 'input#codigo'
@@ -25,8 +25,13 @@ class IncluirRequisitante < SitePrism::Page
     click_button('Salvar')
     sleep 2
   end  
+
+  def excluirrequisitante
+    find('procenge-dropdownrange[identificador="requisitante"] p-dropdown label').set "1303"
+    click_button 'Pesquisar'
+    first('p-dtcheckbox span').click
+    click_button 'Excluir'
+    click_button 'Sim'
+  end
 end
-# element :campoBuscaFilial, '#filial p-dropdown span'
-# element :itemBuscaFilial, 'p-dropdownitem li[aria-label="056 - AGRO IND. DO VALE S. FRCº S/A-AGROVALE"] span'
-# campoBuscaFilial.click
-# itemBuscaFilial.click
+

@@ -2,7 +2,7 @@
 @incluir_requisicao
 Funcionalidade: Incluir Requisição
   Como um usuário logado no sistema
-  Posso acessar a página de incluir requisição
+  Posso acessar a página requisição
   Para incluir uma nova requisição
 
   Contexto: Login e acesso a página

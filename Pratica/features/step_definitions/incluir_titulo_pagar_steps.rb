@@ -1,6 +1,6 @@
 E('acesse a página de título a pagar') do
   incluirtitulopagar.acessarTelaTituloPagar
-  expect(page).to have_content('Incluir Títulos a Pagar')
+  expect(page).to have_content('Títulos a Pagar')
   #page.has_button?('procenge-button[tipo="salvar"] button')
 end
 

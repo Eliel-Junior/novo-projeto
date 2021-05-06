@@ -1,4 +1,4 @@
-class IncluirTipoLancamento < SitePrism::Page
+class TipoLancamento < SitePrism::Page
   include Capybara::DSL
   element :moduloContabilidade, 'img[src="assets/imagens/modulos/contabilidade.svg"]'
   element :tipoLacamento, 'a[href="/P360AUTOMATO/contabilidade/lancamentotipo"] span'
@@ -21,4 +21,12 @@ class IncluirTipoLancamento < SitePrism::Page
     click_button('Salvar')
     sleep 2
   end  
+
+  def excluirtipolancamento
+    find('procenge-inputtextrange[identificador="codigolancamentotipo"] input[id="codigolancamentotipovalorInicial"]').set "1303"
+    click_button 'Pesquisar'
+    first('p-dtcheckbox span').click
+    click_button 'Excluir'
+    click_button 'Sim'
+  end
 end

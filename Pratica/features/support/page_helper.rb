@@ -9,50 +9,102 @@ module Pages
   end
 
   def incluiraplicacao
-    @incluiraplicacao ||= IncluirAplicacao.new
+    @incluiraplicacao ||= Aplicacao.new
   end
   
   def incluircliente
-    @incluircliente ||= IncluirCliente.new
+    @incluircliente ||= Cliente.new
   end
   
   def incluircontaauxiliar
-    @incluircontaauxiliar ||= IncluirContaAuxiliar.new
+    @incluircontaauxiliar ||= ContaAuxiliar.new
   end
 
   def incluircontacontabil
-    @incluircontacontabil ||= IncluirContaContabil.new
+    @incluircontacontabil ||= ContaContabil.new
   end
 
   def incluirgenero
-    @incluirgenero ||= IncluirGenero.new
+    @incluirgenero ||= Genero.new
   end
 
   def incluirhistp
-    @incluirhistp ||= IncluirHistoricoPadrao.new
+    @incluirhistp ||= HistoricoPadrao.new
   end
 
   def incluirrequisicao
-    @incluirrequisicao ||= IncluirRequisicao.new
+    @incluirrequisicao ||= Requisicao.new
   end
 
   def incluirrequisitante
-    @incluirrequisitante ||= IncluirRequisitante.new
+    @incluirrequisitante ||= Requisitante.new
   end
 
   def incluirreserva
-    @incluirreserva ||= IncluirReserva.new
+    @incluirreserva ||= Reserva.new
   end
 
   def incluirtipolacamento
-    @incluirtipolacamento ||= IncluirTipoLancamento.new
+    @incluirtipolacamento ||= TipoLancamento.new
   end
 
   def incluirtitulopagar
-    @incluirtitulopagar ||= IncluirTituloPagar.new
+    @incluirtitulopagar ||= TituloPagar.new
   end
 
   def login
     @login ||= Login.new
+  end
+
+  def excluiraplicacao
+    @excluiraplicacao ||= Aplicacao.new
+  end
+
+  def excluircliente
+    @excluircliente ||= Cliente.new
+  end
+
+  def excluicontaauxiliar
+    @excluircontaauxiliar ||= ContaAuxiliar.new
+  end
+
+  def excluircontacontabil
+    @excluircontacontabil ||= ContaContabil.new
+  end
+
+  def excluirgenero
+    @excluirgenero ||= Genero.new
+  end
+
+  def excluirhistp
+    @excluirhistp ||= HistoricoPadrao.new
+  end
+
+  def excluirrequisicao
+    @excluirrequisicao ||= Requisicao.new
+  end
+
+  def excluirrequisitante
+    @excluirrequisitante ||= Requisitante.new
+  end
+
+  def excluirreserva
+    @excluirreserva ||= Reserva.new
+  end
+
+  def excluirtipolancamento
+    @excluirtipolancamento ||= TipoLancamento.new
+  end
+
+  def excluirtitulopagar
+    @excluirtitulopagar ||= TituloPagar.new
+  end
+
+  def alteraralpicacao
+    @alteraraplicacao ||= Aplicacao.new
+  end
+
+  def alterarcontaauxiliar
+    @alterarcontaauxiliar ||= ContaAuxiliar.new
   end
 end

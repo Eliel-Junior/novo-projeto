@@ -2,7 +2,7 @@
 @incluir_histp
 Funcionalidade: Incluir Histórico Padrão
   Como um usuário logado no sistema
-	Posso acessar a página de incluir histórico padrão
+	Posso acessar a página histórico padrão
 	Para incluir um novo histórico padrão
   
 	Contexto: Login e acesso a página

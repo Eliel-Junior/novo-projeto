@@ -1,4 +1,4 @@
-class IncluirGenero < SitePrism::Page
+class Genero < SitePrism::Page
   element :acessarTelaGenero, 'a[href="/P360AUTOMATO/estoque/generoproduto"] span'
   element :campoCodigo, 'input#codgeneroGeneroproduto'
   element :campoDescricao, 'input#dscgeneroGeneroproduto'
@@ -25,5 +25,13 @@ class IncluirGenero < SitePrism::Page
     sleep 5
     click_button('Salvar')
     sleep 2
+  end
+
+  def excluirgenero
+    find('procenge-inputtext[identificador="dscgeneroGeneroproduto"] input').set "xablau"
+    click_button 'Pesquisar'
+    first('p-dtcheckbox span').click
+    click_button 'Excluir'
+    click_button 'Sim'
   end
 end

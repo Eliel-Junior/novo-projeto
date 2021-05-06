@@ -2,7 +2,7 @@
 @incluir_titulo_pagar
 Funcionalidade: Incluir Título a Pagar
   Como um usuário logado no sistema
-  Posso acessar a página de incluir títulos a pagar
+  Posso acessar a página de títulos a pagar
   Para incluir um novo título
 
   Contexto: Login e acesso a página

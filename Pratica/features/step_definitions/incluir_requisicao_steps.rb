@@ -1,6 +1,6 @@
 E('acesse a página de requisição') do
   incluirrequisicao.acessarTelaIncluirRequisicao
-  expect(page).to have_content('Incluir Requisição')
+  expect(page).to have_content('Requisição')
 end
 
 Quando('eu incluir uma requisição') do

@@ -1,4 +1,4 @@
-class IncluirContaContabil < SitePrism::Page
+class ContaContabil < SitePrism::Page
   element :moduloContabilidade, 'img[src="assets/imagens/modulos/contabilidade.svg"]'
   element :contacontabil, 'a[href="/P360AUTOMATO/contabilidade/contacontabil"] span'
   element :campoConta, 'input#CONTA'
@@ -25,4 +25,11 @@ class IncluirContaContabil < SitePrism::Page
     sleep 2
   end
 
+  def excluircontacontabil
+    find('procenge-inputtextrange[identificador="reduzido"] input').set "aaaaa"
+    click_button 'Pesquisar'
+    first('p-dtcheckbox span').click
+    click_button 'Excluir'
+    click_button 'Sim'
+  end
 end
